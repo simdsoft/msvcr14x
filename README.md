@@ -18,3 +18,5 @@ https://github.com/sonyps5201314/RemoveApiSets.git is a tool for remove ApiSets 
 
 ## refer to:
 https://github.com/Microsoft/STL
+
+https://github.com/sonyps5201314/YY-Thunks.git
