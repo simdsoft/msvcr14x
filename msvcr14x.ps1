@@ -10,7 +10,7 @@ Set-Alias println Write-Host
 $cfgs = @(
     # on
     @{
-       include='E:\dev\ntdll\include;$(IncludePath)';
+       include='$(msvcr14x_ROOT)\..\ntdll\include;$(IncludePath)';
        libs=@('$(msvcr14x_ROOT)\Release;$(msvcr14x_ROOT)\Debug;$(msvcr14x_ROOT)\AnsiRelease;$(msvcr14x_ROOT)\AnsiDebug;%(AdditionalLibraryDirectories)',
        '$(msvcr14x_ROOT)\x64\Release;$(msvcr14x_ROOT)\x64\Debug;$(msvcr14x_ROOT)\x64\AnsiRelease;$(msvcr14x_ROOT)\x64\AnsiDebug;%(AdditionalLibraryDirectories)')
     },
@@ -78,12 +78,20 @@ function mod_msbuild_conf($conf_file, $off_v, $is_x64) {
 
     println "mod: $conf_file, incs=$incs, libs=$libs ..."
 
-    [XML]$msbcProps = Get-Content $conf_file
+    [XML]$msbcDoc = Get-Content $conf_file
+    $nsmgr = [System.Xml.XmlNamespaceManager]::new($msbcDoc.NameTable);
+    $nsmgr.AddNamespace('msbuild', 'http://schemas.microsoft.com/developer/msbuild/2003'); 
+    $root = $msbcDoc.DocumentElement
+    $IncludePathNodes = $root.SelectNodes('//msbuild:IncludePath', $nsmgr)
+    if ($IncludePathNodes.Count -gt 0) {
+        $IncludePathNodes[0].InnerText = $incs
+    } else {
+        throw "Can't found IncludePath in $conf_file"
+    }
 
-    $msbcProps.Project.PropertyGroup.IncludePath = $incs
-    $msbcProps.Project.ItemDefinitionGroup.Link.AdditionalLibraryDirectories.InnerText = $libs
+    $msbcDoc.Project.ItemDefinitionGroup.Link.AdditionalLibraryDirectories.InnerText = $libs
 
-    $strXml = Format-Xml -Xml $msbcProps -Indent 1 -Character "`t"
+    $strXml = Format-Xml -Xml $msbcDoc -Indent 1 -Character "`t"
     Set-Content -Path $conf_file -Value $strXml
 }
 
