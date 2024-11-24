@@ -262,8 +262,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
 /mfc14x/*.asm
-
+/Distrib
 .vscode
-
 _deps
