@@ -265,3 +265,5 @@ __pycache__/
 /mfc14x/*.asm
 
 .vscode
+
+_deps

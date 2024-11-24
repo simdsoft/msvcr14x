@@ -123,6 +123,9 @@ switch ($os_arch) {
     }
 }
 
+$external_prefix = Join-Path $PSScriptRoot '_deps'
+if (!(Test-Path $external_prefix -PathType Container)) { New-Item $external_prefix -ItemType Directory | Out-Null }
+
 function Format-Xml {
     [CmdletBinding()]
     param(
@@ -247,14 +250,77 @@ function msbuild_enable_msvcr14x ($enable) {
     }
 }
 
+
+function download_file($url, $out) {
+    if ($1k.isfile($out)) { return }
+    $1k.println("Downloading $url to $out ...")
+    Invoke-WebRequest -Uri $url -OutFile $out
+}
+
+function download_and_expand($url, $out, $dest) {
+    download_file $url $out
+    if ($out.EndsWith('.zip')) {
+        try {
+            Expand-Archive -Path $out -DestinationPath $dest
+        }
+        catch {
+            Remove-Item $out -Force
+            throw "1kiss: Expand archive $out fail, please try again"
+        }
+    }
+    elseif ($out.EndsWith('.tar.gz')) {
+        if (!$dest.EndsWith('/')) {
+            $1k.mkdirs($dest)
+        }
+        tar xf "$out" -C $dest
+    }
+    elseif ($out.EndsWith('.7z')) {
+        7z x "$out" "-o$dest" -y | Out-Host
+    }
+    elseif ($out.EndsWith('.sh')) {
+        chmod 'u+x' "$out"
+        $1k.mkdirs($dest)
+    }
+}
+
+function setup7z() {
+    $7z_cmd_info = Get-Command '7z' -ErrorAction SilentlyContinue
+    if (!$7z_cmd_info) {
+        $7z_prog = Join-Path $external_prefix '7z2301-x64/7z.exe'
+        $7z_pkg_out = Join-Path $external_prefix '7z2301-x64.zip'
+        if (!(Test-Path $7z_prog -PathType Leaf)) {
+            # https://www.7-zip.org/download.html
+            $7z_url = 'https://gitee.com/simdsoft/1kiss/releases/download/devtools/7z2301-x64.zip'
+            Invoke-WebRequest -Uri $7z_url -OutFile $7z_pkg_out
+            try {
+                Expand-Archive -Path $7z_pkg_out -DestinationPath $external_prefix
+            }
+            catch {
+                Remove-Item $7z_pkg_out -Force
+                throw "msvcr14x: Expand archive $out fail, please try again"
+            }
+        }
+
+        $7z_bin = Split-Path  $7z_prog -Parent
+        if (!$env:PATH.Contains($7z_bin)) {
+            $env:PATH = "$7z_bin;$env:PATH"
+        }
+
+        $7z_cmd_info = Get-Command '7z' -ErrorAction SilentlyContinue
+        if (!$7z_cmd_info) {
+            throw "setup 7z fail"
+        }
+    }
+}
+
 $Global:vs_inst = $null
 $task_schema = @{}
 
 # builtin
 $task_schema.prerequisite = @{
     action = {
-        $boost_ver = '1.85.0'
-        $winsdk_ver = '10.0.22621.0'
+        $boost_ver = '1.86.0'
+        $winsdk_ver = '10.0.26100.0'
         $vs_version = "17.0"
 
         #region find_vs
@@ -316,15 +382,26 @@ $task_schema.prerequisite = @{
             Start-Process "https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/"
         }
     
+        # auto setup boost
         $boost_ROOT = [Environment]::GetEnvironmentVariable("boost_ROOT", "User")
-        while (-not $boost_ROOT -or -not (Test-Path -Path $boost_ROOT)) {
-            $result = [System.Windows.MessageBox]::Show("Please install Boost ($boost_ver) first!", "msvcr14x", "YesNo", "Error")
-            if ($result -eq "No") { exit 1 }
-            Start-Process "https://boostorg.jfrog.io/artifactory/main/release/$boost_ver/source/"
-            $boost_ROOT = Read-Host "Please input your Boost ($boost_ver) root directory!"
-            if ($boost_ROOT -and (Test-Path -Path $boost_ROOT)) {
-                [Environment]::SetEnvironmentVariable("boost_ROOT", $boost_ROOT, "User")
+        if (!$boost_ROOT -or !(Test-Path $boost_ROOT -PathType Container)) {
+            $folder_name = "boost_$($boost_ver.Replace('.', '_'))"
+            $boost_ROOT = Join-Path $external_prefix "$folder_name"
+            
+            if (!(Test-Path $boost_ROOT -PathType Container)) {
+                $boost_url = "https://boostorg.jfrog.io/artifactory/main/release/$boost_ver/source/$folder_name.7z"
+                $boost_pkg_out = Join-Path $external_prefix "$folder_name.7z"
+                if (!(Test-Path $boost_pkg_out -PathType Leaf)) {
+                    curl.exe -L $boost_url -o $boost_pkg_out
+                }
+                
+                if (!(Test-Path $boost_ROOT -PathType Container)) {
+                    setup7z
+                    7z x $boost_pkg_out "-o$external_prefix" -bsp1 -y | Out-Host
+                }
             }
+
+            [Environment]::SetEnvironmentVariable("boost_ROOT", $boost_ROOT, "User")
         }
     }
 }
