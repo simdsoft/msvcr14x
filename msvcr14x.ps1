@@ -499,6 +499,12 @@ $task_schema.status = @{
     }
 }
 
+$task_schema.halt = @{
+    action = {
+        shutdown.exe -s -t 5
+    }
+}
+
 # execute tasks one by one
 foreach ($task in "prerequisite,$tasks".Split(',')) {
     if ($task_schema.Contains($task) -and !$task_schema.$task.executed) {
