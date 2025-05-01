@@ -44,8 +44,8 @@ $cfgs = @(
     @{
         include = '$(msvcr14x_ROOT)\..\ntdll\include;$(IncludePath)';
         libs    = @{
-            x86 = '$(msvcr14x_ROOT)\Release;$(msvcr14x_ROOT)\Debug;$(msvcr14x_ROOT)\AnsiRelease;$(msvcr14x_ROOT)\AnsiDebug;%(AdditionalLibraryDirectories)'
-            x64 = '$(msvcr14x_ROOT)\x64\Release;$(msvcr14x_ROOT)\x64\Debug;$(msvcr14x_ROOT)\x64\AnsiRelease;$(msvcr14x_ROOT)\x64\AnsiDebug;%(AdditionalLibraryDirectories)'
+            x86 = '$(msvcr14x_ROOT)\Release;$(msvcr14x_ROOT)\Debug;%(AdditionalLibraryDirectories)'
+            x64 = '$(msvcr14x_ROOT)\x64\Release;$(msvcr14x_ROOT)\x64\Debug;%(AdditionalLibraryDirectories)'
         }
     }
 )
@@ -59,7 +59,7 @@ $install_files = @("Debug\MSVCR14XD.dll"
     "Debug\MSVCP14XD_CODECVT_IDS.dll"
     "Debug\CONCRT14XD.dll"
     "Debug\MFC14XUD.dll"
-    "Debug\MFC14XD.dll"
+    # "Debug\MFC14XD.dll"
     "Release\MSVCR14X.dll"
     "Release\MSVCP14X.dll"
     "Release\MSVCP14X_1.dll"
@@ -68,7 +68,7 @@ $install_files = @("Debug\MSVCR14XD.dll"
     "Release\MSVCP14X_CODECVT_IDS.dll"
     "Release\CONCRT14X.dll"
     "Release\MFC14XU.dll"
-    "Release\MFC14X.dll"
+    # "Release\MFC14X.dll"
     "x64\Debug\MSVCR14XD.dll"
     "x64\Debug\MSVCP14XD.dll"
     "x64\Debug\MSVCP14X_1D.dll"
@@ -77,7 +77,7 @@ $install_files = @("Debug\MSVCR14XD.dll"
     "x64\Debug\MSVCP14XD_CODECVT_IDS.dll"
     "x64\Debug\CONCRT14XD.dll"
     "x64\Debug\MFC14XUD.dll"
-    "x64\Debug\MFC14XD.dll"
+    # "x64\Debug\MFC14XD.dll"
     "x64\Release\MSVCR14X.dll"
     "x64\Release\MSVCP14X.dll"
     "x64\Release\MSVCP14X_1.dll"
@@ -86,7 +86,7 @@ $install_files = @("Debug\MSVCR14XD.dll"
     "x64\Release\MSVCP14X_CODECVT_IDS.dll"
     "x64\Release\CONCRT14X.dll"
     "x64\Release\MFC14XU.dll"
-    "x64\Release\MFC14X.dll"
+    # "x64\Release\MFC14X.dll"
     "Release\MFC14XCHS.DLL"
     "Release\MFC14XCHT.DLL"
     "Release\MFC14XDEU.DLL"
@@ -107,6 +107,7 @@ $install_files = @("Debug\MSVCR14XD.dll"
     "x64\Release\MFC14XJPN.DLL"
     "x64\Release\MFC14XKOR.DLL"
     "x64\Release\MFC14XRUS.DLL")
+
 $system32_path = Join-Path $env:WINDIR 'System32\'
 $syswow64_path = Join-Path $env:WINDIR 'SysWow64\'
 
@@ -388,7 +389,7 @@ $task_schema.build = @{
 
             msbuild "../YY-Thunks\src\YY-Thunks.UnitTest\YY-Thunks.UnitTest.vcxproj" -t:Build_YY_Thunks_List_hpp
 
-            $configuration = @("Debug", "AnsiDebug", "Release", "AnsiRelease")
+            $configuration = @("Debug", "Release")
             $platform = @("x86", "x64")
             foreach ($conf in $configuration) {
                 foreach ($plat in $platform) {
