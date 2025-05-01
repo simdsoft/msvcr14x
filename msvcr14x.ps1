@@ -284,7 +284,7 @@ function download_and_expand($url, $out, $dest) {
 $Global:vs_inst = $null
 $task_schema = @{}
 
-$boost_ver = '1.87.0'
+$boost_ver = '1.88.0'
 $winsdk_ver = '10.0.26100.0'
 $vs_version = "17.0"
 
