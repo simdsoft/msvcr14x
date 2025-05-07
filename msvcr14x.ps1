@@ -452,10 +452,10 @@ $task_schema.install = @{
 
 $task_schema.uninstall = @{
     action = {
-        Write-Host "msvcr14x: Do you really want uninstall msvcr14x?(y/n): " -NoNewline
+        Write-Host "msvcr14x: Do you really want uninstall msvcr14x?(Y/n): " -NoNewline
         $anwser = Read-Host
         try {
-            if ($anwser -like "y*") {
+            if ($anwser -inotlike "n*") {
                 if ([Environment]::GetEnvironmentVariable('msvcr14x_ROOT', 'Machine')) {
                     $instructions = "[Environment]::SetEnvironmentVariable('msvcr14x_ROOT', `$null, 'Machine');`n"
                 }
