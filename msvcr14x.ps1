@@ -284,7 +284,8 @@ function download_and_expand($url, $out, $dest) {
 $Global:vs_inst = $null
 $task_schema = @{}
 
-$boost_ver = '1.89.0'
+# boot math revision should match Microsoft STL 14.50
+$boost_math_rev = '5e088ffe2ed0e237b9069e3a7352865283d8f196' # 'boost-1.90.0'
 $winsdk_ver = '10.0.26100.0'
 $vs_ver_major = 18
 $vs_ver = "$vs_ver_major.0"
@@ -378,7 +379,7 @@ $task_schema.build = @{
                 git clone "https://github.com/boostorg/math.git" "../boost-math"
             }
             git -C "../boost-math" fetch
-            git -C "../boost-math" checkout "boost-$boost_ver"
+            git -C "../boost-math" checkout $boost_math_rev
 
             # (New-Object -ComObject "WScript.Shell").Run("../ntdll/setup.vbs")
             $ntdll_setup = Join-Path $PSScriptRoot '../ntdll/setup.vbs'
