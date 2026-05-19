@@ -30,34 +30,7 @@
     <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\primitives.hpp">
       <Filter>stl</Filter>
     </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xmath.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
     <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xmtx.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxcctype.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxdftype.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxfftype.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxlftype.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxstod.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxwctype.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxxdtent.hpp">
-      <Filter>stl</Filter>
-    </ClInclude>
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxxprec.hpp">
       <Filter>stl</Filter>
     </ClInclude>
   </ItemGroup>
@@ -272,85 +245,13 @@
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdateord.cpp">
       <Filter>stl</Filter>
     </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdint.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdnorm.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdscale.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdtento.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdtest.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdunscal.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xexp.cpp">
       <Filter>stl</Filter>
     </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfcosh.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdint.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdnorm.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdscale.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdtento.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdtest.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdunsca.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xferaise.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfexp.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfprec.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfsinh.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfvalues.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xgetwctype.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlcosh.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldint.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldscale.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldtento.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldtest.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldunsca.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlexp.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlgamma.cpp">
@@ -360,18 +261,6 @@
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlock.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlpoly.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlprec.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlsinh.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlvalues.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xmbtowc.cpp">
@@ -389,12 +278,6 @@
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xonce2.cpp">
       <Filter>stl</Filter>
     </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xpoly.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xprec.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xrngabort.cpp">
       <Filter>stl</Filter>
     </ClCompile>
@@ -410,28 +293,16 @@
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstof.cpp">
       <Filter>stl</Filter>
     </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoflt.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstol.cpp">
       <Filter>stl</Filter>
     </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstold.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoll.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstopfx.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoul.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoull.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoxflt.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstrcoll.cpp">
@@ -468,18 +339,6 @@
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstof.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstoflt.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstold.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstopfx.cpp">
-      <Filter>stl</Filter>
-    </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstoxfl.cpp">
       <Filter>stl</Filter>
     </ClCompile>
     <ClCompile Include="..\..\YY-Thunks\src\Thunks\YY_Thunks.cpp">

@@ -284,8 +284,8 @@ function download_and_expand($url, $out, $dest) {
 $Global:vs_inst = $null
 $task_schema = @{}
 
-# boot math revision should match Microsoft STL 14.50
-$boost_math_rev = '5e088ffe2ed0e237b9069e3a7352865283d8f196' # 'boost-1.90.0'
+# boot math revision should match Microsoft STL 14.51
+$boost_math_rev = 'e0fcd19f7227d81391770ea46015acc3c80af810'
 $winsdk_ver = '10.0.26100.0'
 $vs_ver_major = 18
 $vs_ver = "$vs_ver_major.0"

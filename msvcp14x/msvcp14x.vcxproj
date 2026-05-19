@@ -206,16 +206,7 @@
   <ItemGroup>
     <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\awint.hpp" />
     <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\primitives.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xmath.hpp" />
     <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xmtx.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxcctype.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxdftype.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxfftype.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxlftype.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxstod.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxwctype.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxxdtent.hpp" />
-    <ClInclude Include="$(VCToolsInstallDir)\crt\src\stl\xxxprec.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -366,40 +357,12 @@
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xalloc.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xcosh.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdateord.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdint.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdnorm.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdscale.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdtento.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdtest.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xdunscal.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xexp.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfcosh.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdint.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdnorm.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdscale.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdtento.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdtest.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfdunsca.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xferaise.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfexp.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfprec.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfsinh.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xfvalues.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xgetwctype.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlcosh.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldint.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldscale.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldtento.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldtest.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xldunsca.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlexp.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlgamma.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlocale.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlock.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlpoly.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlprec.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlsinh.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xlvalues.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xmbtowc.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xmtx.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xnotify.cpp" />
@@ -410,21 +373,15 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xpoly.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xprec.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xrngabort.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xrngdev.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xsinh.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstod.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstof.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoflt.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstol.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstold.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoll.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstopfx.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoul.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoull.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstoxflt.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstrcoll.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xstrxfrm.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xthrow.cpp" />
@@ -437,10 +394,6 @@
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwctomb.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstod.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstof.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstoflt.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstold.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstopfx.cpp" />
-    <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\xwstoxfl.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\_tolower.cpp" />
     <ClCompile Include="$(VCToolsInstallDir)\crt\src\stl\_toupper.cpp" />
     <ClCompile Include="..\..\YY-Thunks\src\Thunks\YY_Thunks.cpp">
